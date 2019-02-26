@@ -1,0 +1,45 @@
+p{
+  margin: 0;
+}
+.ant-card-body{
+  height: 100%;
+}
+.card-item {
+  width: 240px;
+  height: 120px;
+  margin:10px;
+  border-radius: 5px;
+}
+.card-item-not-lock{
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
+}
+.card-item-not-lock:hover{
+  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11),0 5px 15px 0 rgba(0,0,0,0.08);
+}
+.card-item-lock{
+  border: 2px solid #cccccc;
+}
+.item{
+  height: 100%;
+  display: flex;
+  justify-content:space-between;
+}
+.card-color{
+  height: 40px;
+  width: 40px;
+  border-radius: 50% 50%;
+}
+.card-color + div {
+  flex-grow: 1;
+  margin-left: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between
+}
+.card-tag{
+  display: flex;
+}
+.card-name,
+.card-amount{
+  font-weight: bold;
+}
