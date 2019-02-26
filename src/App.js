@@ -4,80 +4,87 @@ import CreateApp from './component/CreateApp'
 import AppSelector from './component/AppSelector'
 import './App.css';
 
-let simulatedData = [
+const mockAppData = [
   {
     name: '墨刀实验室',
     color: '#64d78f',
     privacy: false,
-    lock: true,
+    locked: true,
     amount: 3
   },
   {
     name: '墨刀魔法棒团队',
     color: '#ffc265',
     privacy: false,
-    lock: false,
+    locked: false,
     amount: 0
   },
   {
     name: '超级工作组',
     color: '#64d78f',
     privacy: true,
-    lock: false,
+    locked: false,
     amount: 4
   },
   {
     name: '冷笑客服组',
     color: '#ff8a8a',
     privacy: false,
-    lock: false,
+    locked: false,
     amount: 4
   },
   {
     name: '设计部门',
     color: '#ffc652',
     privacy: false,
-    lock: true,
+    locked: true,
     amount: 4
   },
   {
     name: 'Third Reactor',
     color: '#7eccef',
     privacy: true,
-    lock: true,
+    locked: true,
     amount: 1
   },
 ];
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { data: [] };
+    this.state = { apps: [] };
   }
+
   componentDidMount() {
-    this.setState({ data: simulatedData });
+    // 一般ajax请求返回都在这里设置数据
+    this.setState({ apps: mockAppData });
   }
-  handleChange = (value) => {
-    let data = simulatedData;
-    if (!value) {
-      this.setState({ data });
-      return false
+
+  appSelectorChanged = (changeValue) => {
+    let matchApps = mockAppData;
+    switch (changeValue) {
+      case 'locked':
+        matchApps = matchApps.filter((ele) => { return ele.locked });
+        break;
+      case 'privacy':
+        matchApps = matchApps.filter((ele) => { return ele.privacy });
+        break;
+      default:
+        break;
     }
-    data = data.filter((ele) => {
-      return ele[value]
-    })
-    this.setState({ data })
+    this.setState({ apps: matchApps });
   }
 
   appListView = () => {
-    let listView = this.state.data.map((item, index) => {
+    let listView = this.state.apps.map((item, index) => {
       return <AppCard key={index} metaInfo={item} />
     })
     return listView
   }
+  
   render() {
     return (
       <div className="apps">
-        <AppSelector selected={this.handleChange} />
+        <AppSelector appSelectorChanged={this.appSelectorChanged} />
         <div className="app-list">
           {this.appListView()}
           <CreateApp />

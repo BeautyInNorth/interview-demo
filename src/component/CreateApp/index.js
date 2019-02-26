@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Card, message } from 'antd';
 import './index.css'
 export default class index extends Component {
-  handleAddCard = () => {
+  addApp = () => {
     message.config({
       duration:1,
       maxCount: 1
@@ -11,9 +11,9 @@ export default class index extends Component {
   }
   render() {
     return (
-      <Card className="add-card">
-        <div className="add-content">
-          <div className="new" onClick={this.handleAddCard}></div>
+      <Card className="creat-app">
+        <div className="app-view">
+          <div className="creat-app-icon" onClick={this.addApp}></div>
           <p>新建项目组</p>
         </div>
       </Card>
