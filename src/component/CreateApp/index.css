@@ -1,28 +1,32 @@
-.creat-app{
+.creat-app {
   width: 240px;
   height: 120px;
-  margin:10px;
+  margin: 10px;
   border-radius: 5px;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.10);
 }
-.app-view{
+
+.app-view {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.creat-app:hover{
-  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11),0 5px 15px 0 rgba(0,0,0,0.08);
+
+.creat-app:hover {
+  box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.11), 0 5px 15px 0 rgba(0, 0, 0, 0.08);
 }
-.creat-app-icon{
+
+.creat-app-icon {
   width: 50px;
   height: 50px;
   background-color: #c8cdd1;
   border-radius: 50% 50%;
   position: relative;
-  cursor:pointer
+  cursor: pointer
 }
-.creat-app-icon::before{
+
+.creat-app-icon::before {
   content: '';
   position: absolute;
   left: 50%;
@@ -34,6 +38,7 @@
   border-top: 4px solid;
   border-radius: 10px;
 }
+
 .creat-app-icon::after {
   content: '';
   position: absolute;
@@ -45,8 +50,9 @@
   margin-top: -15px;
   border-left: 4px solid;
   border-radius: 10px;
- }
- .creat-app-icon+p{
-   color: #9babb1;
-   margin-top: 8px;
- }
+}
+
+.creat-app-icon+p {
+  color: #9babb1;
+  margin-top: 8px;
+}

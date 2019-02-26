@@ -55,7 +55,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    // 一般ajax请求返回都在这里设置数据
+    // 一般Ajax请求返回都在这里设置数据
     this.setState({ apps: mockAppData });
   }
 
@@ -80,7 +80,7 @@ class App extends Component {
     })
     return listView
   }
-  
+
   render() {
     return (
       <div className="apps">

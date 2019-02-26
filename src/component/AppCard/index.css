@@ -1,45 +1,56 @@
-p{
+/* 覆盖ant Desgin 的默认下边距 */
+
+p {
   margin: 0;
 }
-.ant-card-body{
+
+.ant-card-body {
   height: 100%;
 }
+
 .card-item {
   width: 240px;
   height: 120px;
-  margin:10px;
+  margin: 10px;
   border-radius: 5px;
 }
-.card-item-not-lock{
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
+
+.card-item-not-lock {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.10);
 }
-.card-item-not-lock:hover{
-  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11),0 5px 15px 0 rgba(0,0,0,0.08);
+
+.card-item-not-lock:hover {
+  box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.11), 0 5px 15px 0 rgba(0, 0, 0, 0.08);
 }
-.card-item-lock{
+
+.card-item-lock {
   border: 2px solid #cccccc;
 }
-.item{
+
+.item {
   height: 100%;
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
 }
-.card-color{
+
+.app-icon {
   height: 40px;
   width: 40px;
   border-radius: 50% 50%;
 }
-.card-color + div {
+
+.app-icon+div {
   flex-grow: 1;
   margin-left: 14px;
   display: flex;
   flex-direction: column;
   justify-content: space-between
 }
-.card-tag{
+
+.app-tags {
   display: flex;
 }
-.card-name,
-.card-amount{
+
+.app-name, .card-amount {
   font-weight: bold;
 }
