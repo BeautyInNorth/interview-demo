@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import CardItem from './component/CardItem'
-import AddCard from './component/AddCard'
-import TypeCard from './component/TypeCard'
+import AppCard from './component/AppCard'
+import CreateApp from './component/CreateApp'
+import AppSelector from './component/AppSelector'
 import './App.css';
 
 let simulatedData = [
@@ -58,8 +58,8 @@ class App extends Component {
   }
   handleChange = (value) => {
     let data = simulatedData;
-    if(!value){
-      this.setState({data});
+    if (!value) {
+      this.setState({ data });
       return false
     }
     data = data.filter((ele) => {
@@ -68,17 +68,19 @@ class App extends Component {
     this.setState({ data })
   }
 
+  appListView = () => {
+    let listView = this.state.data.map((item, index) => {
+      return <AppCard key={index} metaInfo={item} />
+    })
+    return listView
+  }
   render() {
     return (
-      <div className="main">
-        <TypeCard selected={this.handleChange}/>
-        <div className="content">
-          {
-            this.state.data.map((item, index) => {
-              return <CardItem key={index} cardMsg={item} />
-            })
-          }
-          <AddCard />
+      <div className="apps">
+        <AppSelector selected={this.handleChange} />
+        <div className="app-list">
+          {this.appListView()}
+          <CreateApp />
         </div>
       </div>
     );
