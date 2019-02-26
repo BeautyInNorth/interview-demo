@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import CardItem from './component/CardItem'
 import AddCard from './component/AddCard'
-import { Select } from 'antd';
+import TypeCard from './component/TypeCard'
 import './App.css';
 
 let simulatedData = [
@@ -41,14 +41,13 @@ let simulatedData = [
     amount: 4
   },
   {
-    name: 'Third',
+    name: 'Third Reactor',
     color: '#7eccef',
     privacy: true,
     lock: true,
     amount: 1
   },
 ];
-const Option = Select.Option;
 class App extends Component {
   constructor(props) {
     super(props);
@@ -71,19 +70,15 @@ class App extends Component {
 
   render() {
     return (
-      <div className="condition">
-        <Select defaultValue="" style={{ width: 120, margin: 10 }} onChange={this.handleChange}>
-          <Option value="">所有项目组</Option>
-          <Option value="lock">锁定</Option>
-          <Option value="privacy">私密</Option>
-        </Select>
+      <div className="main">
+        <TypeCard selected={this.handleChange}/>
         <div className="content">
           {
             this.state.data.map((item, index) => {
               return <CardItem key={index} cardMsg={item} />
             })
           }
-          <AddCard></AddCard>
+          <AddCard />
         </div>
       </div>
     );
